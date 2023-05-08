@@ -7,13 +7,26 @@ VANDALIR (**V**ulnerability detection & static **AN**alysis using **DA**talog an
 ## Set up
 
 Install python3 (version >= 3.6)
+```
+apt-get install python3
+```
 
 Install [clang](https://clang.llvm.org) (version >= 10, currently supported: LLVM 10)
+```
+apt-get install clang-10
+```
 
 install [llvmlite](https://github.com/numba/llvmlite) (version >= 0.34.0): 
 
 ```
-pip3 install llvmlite
+pip3 install llvmlite==0.34.0
+```
+
+If "RuntimeError: Could not find a `llvm-config` binary." happens, run the following scripts:
+
+```
+alias llvm-config="llvm-config-10"
+export LLVM_CONFIG="/usr/bin/llvm-config-10"
 ```
 
 Build and install [souffle](https://souffle-lang.github.io/) (version >=2.0.2):
